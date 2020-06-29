@@ -1,5 +1,5 @@
-export interface IRecord {
-    id?: string
+export interface IRecord<T> {
+    id?: string | any
     doi?: string
     institution_key?: string
     metadata?: {

@@ -4,7 +4,7 @@ import { IRecord } from '../types/RecordItem'
 import apiClient from '../ApiClient'
 
 export interface Records {
-    results: IRecord[] 
+    results: IRecord<any> 
     
 }
 
@@ -15,7 +15,7 @@ const useRecordsService = () => {
 
     useEffect(() => {
        apiClient.get('https://odp.saeon.dvn/api/saeon/metadata/?limit=100')
-        .then(res => setResult({ status: 'loaded', payload: res }))
+        .then(response => setResult({ status: 'loaded', payload: response }))
         .catch(error => setResult({ status: 'error', error }))
     }, [])
 

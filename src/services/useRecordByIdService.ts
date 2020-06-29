@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import { Service } from '../types/Service'
 import { IRecord } from '../types/RecordItem'
 
-const useRecordByIdService = (id: string) => {
-    const [result, setResult] = useState<Service<IRecord>>({
+const useRecordByIdService = (id: any) => {
+    const [result, setResult] = useState<Service<IRecord<any>>>({
         status: 'loading'
     })
 

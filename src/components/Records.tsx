@@ -6,6 +6,7 @@ import RecordItem from './RecordItem'
 const Records: React.FC<{}> = () => {
     const service = useRecordsService()
     const [id, setId] = React.useState('')
+   
 
     return (
         <>
@@ -17,14 +18,14 @@ const Records: React.FC<{}> = () => {
                     </div>
                 )}
                 {service.status === 'loaded' &&
-                console.log(service.payload)
-                    Object.keys(service.payload.res).map(field => (
+                // console.log(service.payload)
+                    Object.keys(service.payload.response).map(IRecord => (
                         <div
                             className='record-item'
-                            onClick={() => setId(field.id)}
-                            key={field.id}
+                            onClick={() => setId(IRecord)}
+                            key={IRecord}
                         >
-                            {field.metadata.titles}
+                            {IRecord}
                         </div>
                     ))
                 }

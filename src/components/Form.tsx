@@ -29,9 +29,9 @@ import '../styles-custom.css'
 //     validated: boolean
 // }
 
-export const MyForm: React.FC<IRecord> = () => {
+export const MyForm: React.FC<IRecord<any>> = () => {
 
-  const initialValues: IRecord = { id: '', doi: '', institution_key: '', metadata:  { publisher: '', publicationYear: '', creators: [] }, validated: false } 
+  const initialValues: IRecord<any> = { id: '', doi: '', institution_key: '', metadata:  { publisher: '', publicationYear: '', creators: [] }, validated: false } 
  
 
   return (

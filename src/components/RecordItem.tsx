@@ -3,11 +3,11 @@ import useRecordByIdService from '../services/useRecordByIdService'
 import Loader from './Loader'
 
 export interface Props {
-    id: string
+    id: any
     onClose(): void
 }
 
-const RecordItem: React.FC<Props> = ({ id, onClose }) => {
+const RecordItem: React.FC<Props | any> = ({ id, onClose }) => {
     const service = useRecordByIdService(id) 
 
     return (
@@ -18,7 +18,7 @@ const RecordItem: React.FC<Props> = ({ id, onClose }) => {
 
             {service.status === 'loaded' && (
                 <div className='record'>
-                    <h2>{service.payload.metadata}</h2>
+                    <h2>{service.payload.id}</h2>
                     <div className="institution_key">
                         {!!service.payload.institution_key &&
                             <>
@@ -26,6 +26,12 @@ const RecordItem: React.FC<Props> = ({ id, onClose }) => {
                             </>
                         }
                     </div>
+                </div>    
+            )}
+
+            {service.status === 'error' && (
+                <div className='record'>
+                    seems to be something amiss! 
                 </div>    
             )}
         </div>
