@@ -45,7 +45,7 @@ export const MyForm: React.FC<IRecord<any>> = () => {
         render={({ values }) => (
           <Form>
             <Field
-              name='id'
+              name='initialValues.id'
               render={({ field, form, meta }) => (
                 <div>
                   <input type='text' {...field} placeholder='id' />
@@ -54,7 +54,7 @@ export const MyForm: React.FC<IRecord<any>> = () => {
               )}
             />
             <Field
-              name='doi'
+              name='initialValues.doi'
               render={({ field, form, meta }) => (
                 <div>
                   <input type='text' {...field} placeholder='doi' />
@@ -63,7 +63,7 @@ export const MyForm: React.FC<IRecord<any>> = () => {
               )}
             />  
             <Field
-              name='institution key'
+              name='initialValues.institution_key'
               render={({ field, form, meta }) => (
                 <div>
                   <input type='text' {...field} placeholder='institution key' />
